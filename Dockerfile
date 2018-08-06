@@ -10,7 +10,7 @@ RUN node -e "console.log('Running Node.js ' + process.version)"
 
 
 ENV LDFLAGS=-Wl,-rpath=/var/task/
-RUN yum install cairo cairo-devel libjpeg8-devel libjpeg-turbo-devel automake gcc kernel-devel   -y
+RUN yum install cairo cairo-devel libjpeg8-devel libjpeg-turbo-devel automake gcc kernel-devel   cairomm-devel  pango pango-devel pangomm pangomm-devel giflib-devel  -y
 ENV PKG_CONFIG_PATH='/usr/local/lib/pkgconfig'  
 ENV LD_LIBRARY_PATH='/usr/local/lib':$LD_LIBRARY_PATH  
 
