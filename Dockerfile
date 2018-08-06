@@ -41,8 +41,9 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | ba
   && node -e "console.log('Running Node.js ' + process.version)"
 
 RUN ls /usr/lib64/
-ENV LD_LIBRARY_PATH='/lib':$LD_LIBRARY_PATH
-ENV LD_LIBRARY_PATH='/usr/lib64/':$LD_LIBRARY_PATH
+ENV LD_LIBRARY_PATH=/lib:$LD_LIBRARY_PATH
+ENV LD_LIBRARY_PATH=/usr/lib64/:$LD_LIBRARY_PATH
+
 
 RUN npm install -g serverless
 RUN npm install -g node-gyp
@@ -57,3 +58,5 @@ RUN  npm list -g
 RUN cd /usr/local/nvm/versions/node/v6.10.2/lib/node_modules/canvas && node-gyp rebuild
 # RUN cd /usr/local/nvm/versions/node/v6.10.2/lib/node_modules/jsdom/node_modules/contextify && node-gyp rebuild
 RUN ldconfig
+
+RUN echo $LD_LIBRARY_PATH
