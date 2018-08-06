@@ -5,8 +5,7 @@ RUN yum install -y java-1.8.0-openjdk
 RUN yum install -y git 
 RUN yum install -y gcc-c++ make 
 RUN yum install -y openssl-devel 
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
-RUN . ~/.nvm/nvm.sh | nvm install 6.10.2
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash | . ~/.nvm/nvm.sh | nvm install 6.10.2
 RUN node -e "console.log('Running Node.js ' + process.version)"
 
 ENV LDFLAGS=-Wl,-rpath=/var/task/
