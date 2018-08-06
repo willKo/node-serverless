@@ -7,7 +7,7 @@ amazonlinux with serverless framework, wkhtmltopdf, fabricjs
 amazonlinux:latest
 
 ## node version and libraries
-node: v6.10.
+node: v8.x
 serverless: 1.16.1
 canvas: 1.6.7
 node-gyp: 6.10.2
