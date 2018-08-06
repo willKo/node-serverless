@@ -13,9 +13,6 @@ RUN yum -y update && \
   yum install -y tar.x86_64 && \
   yum clean all
 
-
-
-
 ENV LDFLAGS=-Wl,-rpath=/var/task/
 RUN yum install cairo cairo-devel libjpeg8-devel libjpeg-turbo-devel automake gcc kernel-devel  cairomm-devel  pango pango-devel pangomm pangomm-devel giflib-devel  -y
 ENV PKG_CONFIG_PATH='/usr/local/lib/pkgconfig'
