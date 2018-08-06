@@ -9,6 +9,11 @@ RUN yum install -y openssl-devel
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 6.10.2
 WORKDIR $NVM_DIR
+#isntall tar
+RUN yum -y update && \
+    yum -y install wget && \
+    yum install -y tar.x86_64 && \
+    yum clean all
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
     && . $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
