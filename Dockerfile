@@ -50,7 +50,7 @@ RUN npm install -g canvas
 RUN npm install -g fabric
 RUN node -v
 RUN npm -v
-RUN  npm list -g
+RUN npm list -g
 
 RUN cd /usr/local/nvm/versions/node/v6.10.2/lib/node_modules/canvas && node-gyp rebuild
 RUN cd /usr/local/nvm/versions/node/v6.10.2/lib/node_modules/jsdom/node_modules/contextify && node-gyp rebuild
