@@ -5,8 +5,8 @@ RUN yum install -y java-1.8.0-openjdk
 RUN yum install -y git 
 RUN yum install -y gcc-c++ make 
 RUN yum install -y openssl-devel 
-RUN git clone https://github.com/nodejs/node.git 
-RUN cd ./node/ &&  ls -l &&  git checkout v6.10.2 &&  git checkout v6.10.2 &&  ./configure &&  make &&  make install 
+RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+RUN yum install -y nodejs
 
 ENV LDFLAGS=-Wl,-rpath=/var/task/
 RUN yum install cairo cairo-devel libjpeg8-devel libjpeg-turbo-devel automake gcc kernel-devel   -y
