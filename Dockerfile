@@ -41,7 +41,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | ba
   && node -e "console.log('Running Node.js ' + process.version)"
 
 
-
+ENV LD_LIBRARY_PATH='lib':'/usr/local/lib':$LD_LIBRARY_PATH
 
 RUN npm install -g serverless
 RUN npm install -g node-gyp
