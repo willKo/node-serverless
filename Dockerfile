@@ -23,8 +23,10 @@ ENV PKG_CONFIG_PATH='/usr/local/lib/pkgconfig'
 
 RUN mkdir -p /usr/mylib/
 RUN ls /usr/lib64/
-RUN cp /usr/lib64/{libpng15.so,libpng15.so.15,libjpeg.so.62,libpixman-1.so.0,libfreetype.so.6,libcairo.so.2,libpango-1.0.so.0,libpangocairo-1.0.so.0,libpangoft2-1.0.so.0} /usr/mylib/
 # was libpng12.so.0
+RUN cp /usr/lib64/{libpng15.so,libpng15.so.15,libjpeg.so.62,libpixman-1.so.0,libfreetype.so.6,libcairo.so.2,libpango-1.0.so.0,libpangocairo-1.0.so.0,libpangoft2-1.0.so.0} /usr/mylib/
+RUN chmod u+x /usr/mylib/**
+
 
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 6.10.2
