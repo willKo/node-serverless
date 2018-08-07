@@ -61,4 +61,3 @@ RUN cd /usr/local/nvm/versions/node/v6.10.2/lib/node_modules/canvas && node-gyp 
 RUN ldconfig
 
 RUN echo $LD_LIBRARY_PATH
-RUN PWD
