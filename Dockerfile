@@ -23,7 +23,7 @@ ENV PKG_CONFIG_PATH='/usr/local/lib/pkgconfig'
 
 RUN mkdir -p lib
 RUN ls /usr/lib64/
-RUN cp /usr/lib64/{libpng15.so,libpng15.so.15,libjpeg.so.62,libpixman-1.so.0,libfreetype.so.6,libcairo.so.2,libpango-1.0.so.0,libpangocairo-1.0.so.0,libpangoft2-1.0.so.0} lib/
+RUN cp /usr/lib64/{libpng15.so,libpng15.so.15,libjpeg.so.62,libpixman-1.so.0,libfreetype.so.6,libcairo.so.2,libpango-1.0.so.0,libpangocairo-1.0.so.0,libpangoft2-1.0.so.0} /usr/mylib/
 # was libpng12.so.0
 
 ENV NVM_DIR /usr/local/nvm
@@ -41,8 +41,9 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | ba
   && node -e "console.log('Running Node.js ' + process.version)"
 
 RUN ls /usr/lib64/
-ENV LD_LIBRARY_PATH=/lib:$LD_LIBRARY_PATH
+ENV LD_LIBRARY_PATH=/lib/:$LD_LIBRARY_PATH
 ENV LD_LIBRARY_PATH=/usr/lib64/:$LD_LIBRARY_PATH
+
 
 
 RUN npm install -g serverless
@@ -60,3 +61,4 @@ RUN cd /usr/local/nvm/versions/node/v6.10.2/lib/node_modules/canvas && node-gyp 
 RUN ldconfig
 
 RUN echo $LD_LIBRARY_PATH
+RUN PWD
