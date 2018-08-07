@@ -24,7 +24,7 @@ ENV PKG_CONFIG_PATH='/usr/local/lib/pkgconfig'
 RUN mkdir -p /usr/mylib/
 RUN ls /usr/lib64/
 # was libpng12.so.0
-RUN cp /usr/lib64/{libpng15.so,libpng15.so.15,libjpeg.so.62,libpixman-1.so.0,libfreetype.so.6,libthai.so.0,libcairo.so.2,libpango-1.0.so.0,libpangocairo-1.0.so.0,libpangoft2-1.0.so.0} /usr/mylib/
+RUN cp /usr/lib64/{libpng15.so,libpng15.so.15,libjpeg.so.62,libpixman-1.so.0,libfreetype.so.6,libcairo.so.2,libpango-1.0.so.0,libharfbuzz.so.0,libpangocairo-1.0.so.0,libpangoft2-1.0.so.0} /usr/mylib/
 RUN chmod u+x /usr/mylib/**
 
 
